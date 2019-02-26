@@ -23,7 +23,7 @@ class App:
         print("hi there, everyone!")
         
     def onions(self):
-        tkinter.messagebox.showwarning("I Like Onions!!!!", "DO you LIKE onions?")
+        tkinter.messagebox.showwarning("I Like Onions!!!!", "Do YOU like onions?")
 
 root = tkinter.Tk()
 
