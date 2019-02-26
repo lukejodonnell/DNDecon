@@ -17,7 +17,7 @@ class App:
 
     def say_hi(self):
         print "hi there, everyone!"
-
+#here are my edits ian is dumb and I am cool
 root = Tkinter.Tk()
 
 app = App(root)
