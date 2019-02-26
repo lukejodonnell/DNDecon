@@ -8,9 +8,7 @@ class App:
         frame = tkinter.Frame(master)
         frame.pack()
 
-        self.button = tkinter.Button(
-            frame, text="QUIT", fg="red", command=frame.quit
-            )
+        self.button = tkinter.Button(frame, text="QUIT", fg="red", command=frame.quit)
         self.button.pack(side=tkinter.LEFT)
 
         self.hi_there = tkinter.Button(frame, text="Hello", command=self.say_hi)
@@ -22,7 +20,7 @@ class App:
     def say_hi(self):
         print("hi there, everyone!")
         
-    def onions(self):
+    def onions():
         tkinter.messagebox.showwarning("I Like Onions!!!!", "DO you LIKE onions?")
 
 root = tkinter.Tk()
