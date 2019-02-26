@@ -1,10 +1,30 @@
-import _tkinter
+import tkinter
 import sys
-print(sys.version_info)
-print(sys.hexversion)
+class App:
 
-if sys.hexversion == (34017217):
-    print("your version is both out of date and the one this was written in")
+    def __init__(self, master):
+
+        frame = tkinter.Frame(master)
+        frame.pack()
+
+        self.button = tkinter.Button(
+            frame, text="QUIT", fg="red", command=frame.quit
+            )
+        self.button.pack(side=tkinter.LEFT)
+
+        self.hi_there = tkinter.Button(frame, text="Hello", command=self.say_hi)
+        self.hi_there.pack(side=tkinter.LEFT)
+
+    def say_hi(self):
+        print("hi there, everyone!")
+#here are my edits ian is dumb and I am cool
+root = tkinter.Tk()
+
+app = App(root)
+
+root.mainloop()
+root.destroy() # optional; see description below
+
 
 print("hello")
 
