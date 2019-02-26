@@ -20,8 +20,8 @@ class App:
     def say_hi(self):
         print("hi there, everyone!")
         
-    def onions():
-        tkinter.messagebox.showwarning("I Like Onions!!!!", "DO you LIKE onions?")
+    def onions(self):
+        tkinter.messagebox.showwarning("I Like Onions!!!!", "Do YOU like onions?")
 
 root = tkinter.Tk()
 
