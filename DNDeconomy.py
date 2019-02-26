@@ -1,19 +1,25 @@
 import tkinter
 import sys
 import tkinter.messagebox
+
+#I have no idea what this does
 class App:
 
     def __init__(self, master):
+    
+        #this creates the first "frame" that the other frames will be packed into
 		
         frameMaster = tkinter.Frame(master)
         frameMaster.pack()
 
+        #this creates frame one and two, with one on the left, because it was packed in first I guess sorta
         frame1 = tkinter.Frame(frameMaster)
         frame1.pack(side = tkinter.LEFT)
 
         frame2 = tkinter.Frame(frameMaster)
         frame2.pack(side = tkinter.LEFT)
-
+        
+        #This packs three buttons in frame one, the first going to the top the next to the next highest spot and so one
         self.button = tkinter.Button(frame1, text = "QUIT", fg = "red", command=frame1.quit)
         self.button.pack(side = tkinter.TOP)
 
@@ -23,6 +29,7 @@ class App:
         self.iLikeOnions = tkinter.Button(frame1, text = "onions?", command = self.onions)
         self.iLikeOnions.pack(side = tkinter.TOP)
         
+        #This packs three buttons in frame two, the first going to the top the next to the next highest spot and so one
         self.extraQuitButton = tkinter.Button(frame2, text = "SUPER QUIT", fg = "red", command = self.superQuit)
         self.extraQuitButton.pack(side = tkinter.TOP)
         
@@ -55,7 +62,8 @@ class App:
 	    tkinter.messagebox.showwarning("oops", "this is embarassing")
 	    tkinter.messagebox.showwarning("solutions?", "I guess just use the other quit button")
 	    tkinter.messagebox.showwarning("Well bye", "Don't come back")
-
+	    
+#I have about as much of an idea about what this does as sunnyD contains actual fruit
 root = tkinter.Tk()
 
 app = App(root)
