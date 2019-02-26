@@ -1,10 +1,10 @@
-import Tkinter
+import _tkinter
 import sys
-print sys.version_info
-print sys.hexversion
+print(sys.version_info)
+print(sys.hexversion)
 
 if sys.hexversion == (34017217):
-    print "your version is both out of date and the one this was written in"
+    print("your version is both out of date and the one this was written in")
 
-print "hello"
+print("hello")
 
