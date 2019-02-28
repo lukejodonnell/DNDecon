@@ -116,7 +116,7 @@ merchantFrame = tk.Frame(root)
 rarityFrame = tk.Frame(root)
 w = tk.Label(frame, text = textmsg)
 outPut = tk.Label(root, width = 35, textvariable = outPutStr)
-root.title("DND Economy Version 0.0.2")
+root.title("DND Economy Version 0.0.3")
 
 
 def regionChoice():
