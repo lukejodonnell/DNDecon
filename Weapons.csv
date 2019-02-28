@@ -1,0 +1,39 @@
+Weapon,Cost
+Club,0.1
+Dagger,2
+Greatclub,0.2
+Handaxe,5
+Javelin,0.5
+Light hammer,2
+Mace,5
+Quarterstaff,0.2
+Sickle,1
+Spear,1
+Unarmed strike,0
+Light Crossbow,25
+Dart,0.05
+Shortbow,25
+Sling,0.1
+Battleaxe,10
+Flail,10
+Glaive,20
+Greataxe,30
+Greatsword,50
+Halberd,20
+Lance,10
+Longsword,15
+Maul,10
+Morningstar,15
+Pike,5
+Rapier,25
+Scimitar,25
+Shortsword,10
+Trident,5
+War pick,5
+Warhammer,15
+Whip,2
+Blowgun,10
+Hand Crossbow,75
+Heavy Crossbow,50
+Longbow,50
+Net,1
