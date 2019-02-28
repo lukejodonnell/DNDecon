@@ -22,22 +22,6 @@ items = [
     longsword
 ]
 
-#items = [
-    #"leather armor",
-    #"plate armor",
-    #"light crossbow",
-    #"dagger",
-    #"longsword"
-    #]
-    
-#itemsValues = [
-    #10,
-    #25000,
-    #25,
-    #2,
-    #15
-    #]
-
 regions = [
     ("Adrivian Empire"),
     ("Sylvian Kingdom"),
