@@ -149,7 +149,7 @@ def regionChoice():
 def buildButtonStack(strList, buttonFrame, trackerInt):
     for val, btnMsg in enumerate(strList):
         tk.Radiobutton(buttonFrame, 
-                  text=btnMsg,
+                  text=btnMsg.name,
                   padx = 20, 
                   variable=trackerInt, 
                   command=regionChoice,
