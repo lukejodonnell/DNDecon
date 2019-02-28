@@ -102,7 +102,7 @@ merchantVar = tk.IntVar()
 merchantVar.set(1)
 rarityVar = tk.IntVar()
 rarityVar.set(1)
-buttonCountInt = 2
+buttonCountInt = 1
 buttonCountStr = tk.StringVar()
 outPutStr = tk.StringVar()
 outPutStr.set("still not set")
