@@ -6,21 +6,37 @@ regionIndex = None
 textmsg = "this button should increment by one every time you press it"
 outPutInt = 0
 
+from DND_Classes import Items
+
+leather_armor = Items("leather armor", 10)
+plate_armor = Items("plate armor", 25000)
+light_crossbow = Items("light crossbow", 25)
+dagger = Items("dagger", 2)
+longsword = Items("longsword", 15)
+
 items = [
-    "leather armor",
-    "plate armor",
-    "light crossbow",
-    "dagger",
-    "longsword"
-    ]
+    leather_armor,
+    plate_armor,
+    light_crossbow,
+    dagger,
+    longsword
+]
+
+#items = [
+    #"leather armor",
+    #"plate armor",
+    #"light crossbow",
+    #"dagger",
+    #"longsword"
+    #]
     
-itemsValues = [
-    10,
-    25000,
-    25,
-    2,
-    15
-    ]
+#itemsValues = [
+    #10,
+    #25000,
+    #25,
+    #2,
+    #15
+    #]
 
 regions = [
     ("Adrivian Empire"),
@@ -126,8 +142,8 @@ def regionChoice():
     locationIndex = locationVar.get()
     merchantIndex = merchantVar.get()
     rarityIndex = rarityVar.get()
-    outPutStr.set(str(itemsValues[itemIndex] * (regionsValues[regionIndex] + locationsValues[locationIndex] + merchantValues[merchantIndex] + rarityValues[rarityIndex])) + " Gold Pieces")
-    print(itemsValues[itemIndex] * (regionsValues[regionIndex] + locationsValues[locationIndex]))
+    outPutStr.set(str(items[itemIndex].value * (regionsValues[regionIndex] + locationsValues[locationIndex] + merchantValues[merchantIndex] + rarityValues[rarityIndex])) + " Gold Pieces")
+    print(items[itemIndex].value * (regionsValues[regionIndex] + locationsValues[locationIndex]))
 
 #usage = buildButtonStack(array_of_strings_for_button_labels, frame_for_buttons, int_for_index_of_array    
 def buildButtonStack(strList, buttonFrame, trackerInt):
@@ -162,15 +178,15 @@ buttonCountStr.set("1")
 
 
 buildButtonStack(items, itemFrame, itemVar)
-# for val, btnMsg in enumerate(items):
-#     tk.Radiobutton(itemFrame, 
-#                   text=btnMsg,
-#                   padx = 20, 
-#                   variable=itemVar, 
-#                   command=regionChoice,
-#                   indicatoron = 0,
-#                   width = 15,
-#                   value=val).pack()
+#for val, btnMsg in enumerate(items):
+    #tk.Radiobutton(itemFrame,
+                   #text=btnMsg,
+                   #padx = 20,
+                   #variable=itemVar,
+                   #command=regionChoice,
+                   #indicatoron = 0,
+                   #width = 15,
+                   #value=val).pack()
 
 
 for val, btnMsg in enumerate(regions):
