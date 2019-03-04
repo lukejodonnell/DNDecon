@@ -7,7 +7,7 @@ class Items:
 class Regions:
 
     def __init__(self, region_name, region_value):
-        self.name = region_name
+        self.region_name = region_name
         self.region_value = region_value
 
 class Locations:

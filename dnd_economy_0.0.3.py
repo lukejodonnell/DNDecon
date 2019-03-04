@@ -22,68 +22,68 @@ items = [
     longsword
 ]
 
+from DND_Classes import Regions
+
+Adrivian_Empire = Regions("Adrivian Empire", 2.7)
+Sylvian_Kingdom = Regions("Sylvian Kingdom", 2.6)
+Evasol_Court = Regions("Evasol Court", 2.5)
+Adrokk = Regions("Adrokk", 3.4)
+Treerock_Peninsula = Regions("Treerock Peninsula", 2.7)
+
 regions = [
-    ("Adrivian Empire"),
-    ("Sylvian Kingdom"),
-    ("Evasol Court"),
-    ("Adrokk"),
-    ("Treerock Peninsula")
-    ]
-    
-regionsValues = [
-    2.7,
-    2.6,
-    2.5,
-    3.4,
-    2.7
+    Adrivian_Empire,
+    Sylvian_Kingdom,
+    Evasol_Court,
+    Adrokk,
+    Treerock_Peninsula
     ]
 
+from DND_Classes import Locations
+
+wilderness = Locations("wilderness", 0.3)
+village = Locations("village", 0)
+town = Locations("town", 0.1)
+city = Locations("city", 0.3)
+road = Locations("road", 0.5)
+
 locations = [
-    "wilderness",
-    "village",
-    "Town",
-    "city",
-    "road"
+    wilderness,
+    village,
+    town,
+    city,
+    road
     ]
-    
-locationsValues = [
-    0.3,
-    0,
-    0.1,
-    0.3,
-    0.5
-    ]
-    
+
+from DND_Classes import Merchants
+
+craftsman = Merchants("craftsman", -0.5)
+general = Merchants("general", 0.1)
+specialized = Merchants("specialized", 0.2)
+ultraspecialized =Merchants("ultraspecialized", 0.5)
+walmart = Merchants("walmart", -1.2)
+
 merchants = [
-    "craftsman",
-    "general",
-    "specialized",
-    "ulraspecialized",
-    "walmart"
+    craftsman,
+    general,
+    specialized,
+    ultraspecialized,
+    walmart
     ]
-    
-merchantValues = [
-    -0.5,
-    0.1,
-    0.2,
-    0.5,
-    -1.2
-    ]
-    
+
+from DND_Classes import Rarity
+
+rare = Rarity("rare", 1.2)
+unusual = Rarity("unusual", 0.9)
+occasional = Rarity("occasional", 0.3)
+frequent = Rarity("frequent", 0)
+up_the_yin_yang = Rarity("up the yin yang", -0.5)
+
 rarity = [
-    "rare",
-    "Unusual",
-    "occasional",
-    "frequent",
-    "up the yin yang"
-    ]
-    
-rarityValues = [
-    1.2,
-    0.9,
-    0.3,
-    0,
-    -0.5
+    rare,
+    unusual,
+    occasional,
+    frequent,
+    up_the_yin_yang
     ]
 
 #it gets mad if this isn't first
@@ -126,8 +126,8 @@ def regionChoice():
     locationIndex = locationVar.get()
     merchantIndex = merchantVar.get()
     rarityIndex = rarityVar.get()
-    outPutStr.set(str(items[itemIndex].value * (regionsValues[regionIndex] + locationsValues[locationIndex] + merchantValues[merchantIndex] + rarityValues[rarityIndex])) + " Gold Pieces")
-    print(items[itemIndex].value * (regionsValues[regionIndex] + locationsValues[locationIndex]))
+    outPutStr.set(str(items[itemIndex].value * (regions[regionIndex].region_value + locations[locationIndex].location_value + merchants[merchantIndex].merchant_value + rarity[rarityIndex].rarity_value)) + " Gold Pieces")
+    print(items[itemIndex].value * (regions[regionIndex].region_value + locations[locationIndex].location_value))
 
 #usage = buildButtonStack(array_of_strings_for_button_labels, frame_for_buttons, int_for_index_of_array    
 def buildButtonStack(strList, buttonFrame, trackerInt):
@@ -175,7 +175,7 @@ buildButtonStack(items, itemFrame, itemVar)
 
 for val, btnMsg in enumerate(regions):
     tk.Radiobutton(regionFrame, 
-                  text=btnMsg,
+                  text=btnMsg.region_name,
                   padx = 20, 
                   variable=regionVar, 
                   command=regionChoice,
@@ -185,7 +185,7 @@ for val, btnMsg in enumerate(regions):
                   
 for val, btnMsg in enumerate(locations):
     tk.Radiobutton(locationFrame, 
-                  text=btnMsg,
+                  text=btnMsg.location_type,
                   padx = 20, 
                   variable=locationVar, 
                   command=regionChoice,
@@ -195,7 +195,7 @@ for val, btnMsg in enumerate(locations):
                   
 for val, btnMsg in enumerate(merchants):
     tk.Radiobutton(merchantFrame, 
-                  text=btnMsg,
+                  text=btnMsg.merchant_type,
                   padx = 20, 
                   variable=merchantVar, 
                   command=regionChoice,
@@ -205,7 +205,7 @@ for val, btnMsg in enumerate(merchants):
                   
 for val, btnMsg in enumerate(rarity):
     tk.Radiobutton(rarityFrame, 
-                  text=btnMsg,
+                  text=btnMsg.rarity_type,
                   padx = 20, 
                   variable=rarityVar, 
                   command=regionChoice,
