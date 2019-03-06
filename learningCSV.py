@@ -3,27 +3,26 @@ import csv
 
 root = tk.Tk()
 frame = tk.Frame(root)
-#I am so mad that I can't figure out how to make this work without this global variable
-weaponCostWhichIsUnfortunatelyAGlobalVariable = "not yet set"
+costVar = tk.StringVar()
 
 def printDatCost():
-    global weaponCostWhichIsUnfortunatelyAGlobalVariable
-    print(weaponCostWhichIsUnfortunatelyAGlobalVariable)
+    print(costVar.get())
 
 csvfile = open('Weapons.csv', newline='')
 
 
 reader = csv.DictReader(csvfile)
 for row in reader:
-    print(row['Weapon'], row['Cost'])
-    weaponCostWhichIsUnfortunatelyAGlobalVariable = row['Cost']
+    print()
+    varName = row["weapon"] + " = " + row["cost"]
     tk.Radiobutton(frame, 
-                   text=row["Weapon"],
+                   text=row["weapon"],
                    padx = 20, 
+                   variable = costVar,
                    command=printDatCost,
                    indicatoron = 0,
                    width = 15,
-                   value=row).pack()
+                   value=varName).pack()
         
 
 

@@ -1,4 +1,7 @@
 import tkinter as tk
+import csv
+
+items_csv = open('Weapons.csv', newline='')
 
 #declaring 'regular' non-tk variables
 
@@ -6,23 +9,31 @@ regionIndex = None
 textmsg = "this button should increment by one every time you press it"
 outPutInt = 0
 
+items_list = []
+regions_list= []
+locations_list = []
+merchants_list = []
+rarity_list = []
+
+
 from DND_Classes import Items
-
-leather_armor = Items("leather armor", 10)
-plate_armor = Items("plate armor", 25000)
-light_crossbow = Items("light crossbow", 25)
-dagger = Items("dagger", 2)
-longsword = Items("longsword", 15)
-
-items = [
-    leather_armor,
-    plate_armor,
-    light_crossbow,
-    dagger,
-    longsword
-]
-
 from DND_Classes import Regions
+from DND_Classes import Locations
+from DND_Classes import Merchants
+from DND_Classes import Rarity
+
+reader = csv.DictReader(items_csv)
+for row in reader:
+    items_list.append(Items(row['weapon'], row['cost']))
+    regions_list.append(Regions(row['region'], row['region_var']))
+    locations_list.append(Locations(row['locations'], row['location_var']))
+    merchants_list.append(Merchants(row['merchants'], row['merchant_var']))
+    rarity_list.append(Rarity(row['rarity'], row['rarity_var'])) 
+    
+    
+
+
+
 
 Adrivian_Empire = Regions("Adrivian Empire", 2.7)
 Sylvian_Kingdom = Regions("Sylvian Kingdom", 2.6)
@@ -38,7 +49,7 @@ regions = [
     Treerock_Peninsula
     ]
 
-from DND_Classes import Locations
+
 
 wilderness = Locations("wilderness", 0.3)
 village = Locations("village", 0)
@@ -54,7 +65,7 @@ locations = [
     road
     ]
 
-from DND_Classes import Merchants
+
 
 craftsman = Merchants("craftsman", -0.5)
 general = Merchants("general", 0.1)
@@ -70,7 +81,6 @@ merchants = [
     walmart
     ]
 
-from DND_Classes import Rarity
 
 rare = Rarity("rare", 1.2)
 unusual = Rarity("unusual", 0.9)
@@ -132,6 +142,7 @@ def regionChoice():
 #usage = buildButtonStack(array_of_strings_for_button_labels, frame_for_buttons, int_for_index_of_array    
 def buildButtonStack(strList, buttonFrame, trackerInt):
     for val, btnMsg in enumerate(strList):
+        print("btnMsg = " + str(btnMsg))
         tk.Radiobutton(buttonFrame, 
                   text=btnMsg.name,
                   padx = 20, 
@@ -161,57 +172,12 @@ buttonCountStr.set("1")
 
 
 
-buildButtonStack(items, itemFrame, itemVar)
-#for val, btnMsg in enumerate(items):
-    #tk.Radiobutton(itemFrame,
-                   #text=btnMsg,
-                   #padx = 20,
-                   #variable=itemVar,
-                   #command=regionChoice,
-                   #indicatoron = 0,
-                   #width = 15,
-                   #value=val).pack()
+buildButtonStack(items_list, itemFrame, itemVar)
+buildButtonStack(regions_list, regionFrame, regionVar)
+buildButtonStack(locations_list, locationFrame, locationVar)
+buildButtonStack(merchants_list, merchantFrame, merchantVar)
+buildButtonStack(rarity_list, rarityFrame, rarityVar)
 
-
-for val, btnMsg in enumerate(regions):
-    tk.Radiobutton(regionFrame, 
-                  text=btnMsg.region_name,
-                  padx = 20, 
-                  variable=regionVar, 
-                  command=regionChoice,
-                  indicatoron = 0,
-                  width = 15,
-                  value=val).pack()
-                  
-for val, btnMsg in enumerate(locations):
-    tk.Radiobutton(locationFrame, 
-                  text=btnMsg.location_type,
-                  padx = 20, 
-                  variable=locationVar, 
-                  command=regionChoice,
-                  indicatoron = 0,
-                  width = 15,
-                  value=val).pack()
-                  
-for val, btnMsg in enumerate(merchants):
-    tk.Radiobutton(merchantFrame, 
-                  text=btnMsg.merchant_type,
-                  padx = 20, 
-                  variable=merchantVar, 
-                  command=regionChoice,
-                  indicatoron = 0,
-                  width = 15,
-                  value=val).pack()
-                  
-for val, btnMsg in enumerate(rarity):
-    tk.Radiobutton(rarityFrame, 
-                  text=btnMsg.rarity_type,
-                  padx = 20, 
-                  variable=rarityVar, 
-                  command=regionChoice,
-                  indicatoron = 0,
-                  width = 15,
-                  value=val).pack()
                   
 
 w.pack(side = tk.LEFT)

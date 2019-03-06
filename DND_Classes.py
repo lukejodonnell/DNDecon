@@ -7,23 +7,23 @@ class Items:
 class Regions:
 
     def __init__(self, region_name, region_value):
-        self.region_name = region_name
-        self.region_value = region_value
+        self.name = region_name
+        self.value = region_value
 
 class Locations:
 
     def __init__(self, location_type, location_value):
-        self.location_type = location_type
-        self.location_value = location_value
+        self.name = location_type
+        self.value = location_value
 
 class Merchants:
 
     def __init__(self, merchant_type, merchant_value):
-        self.merchant_type = merchant_type
-        self.merchant_value = merchant_value
+        self.name = merchant_type
+        self.value = merchant_value
 
 class Rarity:
 
     def __init__(self, rarity_type, rarity_value):
-        self.rarity_type = rarity_type
-        self.rarity_value = rarity_value
+        self.name = rarity_type
+        self.value = rarity_value

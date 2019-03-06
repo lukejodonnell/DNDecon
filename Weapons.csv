@@ -1,39 +1,39 @@
-Weapon,Cost
-Club,0.1
-Dagger,2
-Greatclub,0.2
-Handaxe,5
-Javelin,0.5
-Light hammer,2
-Mace,5
-Quarterstaff,0.2
-Sickle,1
-Spear,1
-Unarmed strike,0
-Light Crossbow,25
-Dart,0.05
-Shortbow,25
-Sling,0.1
-Battleaxe,10
-Flail,10
-Glaive,20
-Greataxe,30
-Greatsword,50
-Halberd,20
-Lance,10
-Longsword,15
-Maul,10
-Morningstar,15
-Pike,5
-Rapier,25
-Scimitar,25
-Shortsword,10
-Trident,5
-War pick,5
-Warhammer,15
-Whip,2
-Blowgun,10
-Hand Crossbow,75
-Heavy Crossbow,50
-Longbow,50
-Net,1
+index,weapon,cost,region,region_var,locations,location_var,merchants,merchant_var,rarity,rarity_var
+1,Club,0.1,Adrivian Empire,2.7,wilderness,0.3,craftsman,-0.5,rare,1.2
+2,Dagger,2,Sylvian Kingdom,2.6,village,0,general,0.1,unusual,0.9
+3,Greatclub,0.2,Evasol Court,2.5,town,0.1,specialized,0.2,occasional,0.3
+4,Handaxe,5,Adrokk,3.4,city,0.3,ultraspecialized,0.5,frequent,0
+5,Javelin,0.5,Treerock Peninsula,2.7,road,0.5,walmart,-1.2,up the yin yang,-0.5
+6,Light hammer,2,,,,,,,,
+7,Mace,5,,,,,,,,
+8,Quarterstaff,0.2,,,,,,,,
+9,Sickle,1,,,,,,,,
+10,Spear,1,,,,,,,,
+11,Unarmed strike,0,,,,,,,,
+12,Light Crossbow,25,,,,,,,,
+13,Dart,0.05,,,,,,,,
+14,Shortbow,25,,,,,,,,
+15,Sling,0.1,,,,,,,,
+16,Battleaxe,10,,,,,,,,
+17,Flail,10,,,,,,,,
+18,Glaive,20,,,,,,,,
+19,Greataxe,30,,,,,,,,
+20,Greatsword,50,,,,,,,,
+21,Halberd,20,,,,,,,,
+22,Lance,10,,,,,,,,
+23,Longsword,15,,,,,,,,
+24,Maul,10,,,,,,,,
+25,Morningstar,15,,,,,,,,
+26,Pike,5,,,,,,,,
+27,Rapier,25,,,,,,,,
+28,Scimitar,25,,,,,,,,
+29,Shortsword,10,,,,,,,,
+30,Trident,5,,,,,,,,
+31,War pick,5,,,,,,,,
+32,Warhammer,15,,,,,,,,
+33,Whip,2,,,,,,,,
+34,Blowgun,10,,,,,,,,
+35,Hand Crossbow,75,,,,,,,,
+36,Heavy Crossbow,50,,,,,,,,
+37,Longbow,50,,,,,,,,
+38,Net,1,,,,,,,,
