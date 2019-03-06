@@ -6,7 +6,7 @@ from DND_Classes import Locations
 from DND_Classes import Merchants
 from DND_Classes import Rarity
 
-items_csv = open('Weapons.csv', newline='')
+items_csv = open('save_data.csv', newline='')
 
 #declaring 'regular' non-tk variables
 
@@ -15,7 +15,7 @@ textmsg = "this button should increment by one every time you press it"
 outPutInt = 0
 
 items_list = []
-regions_list= []
+regions_list = []
 locations_list = []
 merchants_list = []
 rarity_list = []
@@ -64,6 +64,7 @@ root.title("DND Economy Version 0.0.4")
 
 
 def calculateCost():
+    print("locations_list[locationVar.get()].value = " + locations_list[locationVar.get()].value)
     outPutStr.set(str(float(items_list[itemVar.get()].value) * (float(regions_list[regionVar.get()].value) + float(locations_list[locationVar.get()].value) + float(merchants_list[merchantVar.get()].value) + float(rarity_list[rarityVar.get()].value))) + " Gold Pieces")
 
 #usage = buildButtonStack(array_of_strings_for_button_labels, frame_for_buttons, int_for_index_of_array    
@@ -72,10 +73,10 @@ def buildButtonStack(strList, buttonFrame, trackerInt):
         print("btnMsg = " + str(btnMsg))
         print("trackerInt = " + str(trackerInt))
         tk.Radiobutton(buttonFrame, 
-                  text=btnMsg.name,
+                  text = btnMsg.name,
                   padx = 20, 
-                  variable=trackerInt, 
-                  command=calculateCost,
+                  variable = trackerInt, 
+                  command = calculateCost,
                   indicatoron = 0,
                   width = 15,
                   value=val).pack()
