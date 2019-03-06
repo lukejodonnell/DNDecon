@@ -65,7 +65,6 @@ root.title("DND Economy Version 0.0.4")
 
 def regionChoice():
     outPutStr.set(str(float(items_list[itemVar.get()].value) * (float(regions_list[regionVar.get()].value) + float(locations_list[locationVar.get()].value) + float(merchants_list[merchantVar.get()].value) + float(rarity_list[rarityVar.get()].value))) + " Gold Pieces")
-    print(items[itemIndex].value * (regions[regionIndex].region_value + locations[locationIndex].location_value))
 
 #usage = buildButtonStack(array_of_strings_for_button_labels, frame_for_buttons, int_for_index_of_array    
 def buildButtonStack(strList, buttonFrame, trackerInt):
