@@ -80,6 +80,9 @@ def buildButtonStack(strList, buttonFrame, trackerInt):
                   indicatoron = 0,
                   width = 15,
                   value=val).pack()
+        #for some reason this if statement doesnt work, likely because csv is reading the blank cells as objects
+        if strList is None:
+            break
     
 
 

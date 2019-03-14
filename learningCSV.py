@@ -8,7 +8,7 @@ costVar = tk.StringVar()
 def printDatCost():
     print(costVar.get())
 
-csvfile = open('Weapons.csv', newline='')
+csvfile = open('save_data.csv', newline='')
 
 
 reader = csv.DictReader(csvfile)
