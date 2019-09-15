@@ -23,11 +23,16 @@ rarity_list = []
 
 reader = csv.DictReader(items_csv)
 for row in reader:
-    items_list.append(Items(row['weapon'], row['cost']))
-    regions_list.append(Regions(row['region'], row['region_var']))
-    locations_list.append(Locations(row['locations'], row['location_var']))
-    merchants_list.append(Merchants(row['merchants'], row['merchant_var']))
-    rarity_list.append(Rarity(row['rarity'], row['rarity_var'])) 
+    if row['weapon'] != "" :
+        items_list.append(Items(row['weapon'], row['cost']))
+    if row['region'] != "" :
+        regions_list.append(Regions(row['region'], row['region_var']))
+    if row['locations'] != "" :
+        locations_list.append(Locations(row['locations'], row['location_var']))
+    if row['merchants'] != "" :
+        merchants_list.append(Merchants(row['merchants'], row['merchant_var']))
+    if row['rarity'] != "" :
+        rarity_list.append(Rarity(row['rarity'], row['rarity_var'])) 
 
 
 #it gets mad if this isn't first
@@ -81,7 +86,7 @@ def buildButtonStack(strList, buttonFrame, trackerInt):
                   width = 15,
                   value=val).pack()
         #for some reason this if statement doesnt work, likely because csv is reading the blank cells as objects
-        if strList is None:
+        if val is None:
             break
     
 
